@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://%{HTTP_HOST}/$1",
+      "statusCode": 301
+    }
+  ]
+}
