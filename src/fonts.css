@@ -1,0 +1,17 @@
+@font-face {
+    font-family: "wavy";
+    src:
+        local("wavy"),
+        url("./fonts/wavy.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "console";
+    src:
+        local("console"),
+        url("./fonts/Inconsolata-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
