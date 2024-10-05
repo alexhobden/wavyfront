@@ -10,7 +10,7 @@ const Welcome: React.FC = () => {
                     text="Hello and Welcome to Wavy. This is a Website inspired by the classic win98 Desktop where i plan to experiment and dump products of my creative processes. The Website is currently in Development so a lot of Things won't work yet, but take a look around and enjoy :)"
                     speed={40}
                     linebreak={999}
-                    stepsize={1}
+                    stepsize={2}
                 />
             </div>
         </WindowFrame>
