@@ -3,9 +3,10 @@ import WavyButton from "./wavyButton"
 
 interface WindowProps {
     children?: React.ReactNode
+    title?: string
 }
 
-const WindowFrame: React.FC<WindowProps> = ({ children }) => {
+const WindowFrame: React.FC<WindowProps> = ({ children, title }) => {
     const [isVisible, setIsVisible] = useState(true)
     const [position, setPosition] = useState<{ top: number; left: number }>({
         top: 0,
@@ -110,7 +111,7 @@ const WindowFrame: React.FC<WindowProps> = ({ children }) => {
                                 cursor: isDragging ? "grabbing" : "grab",
                             }}
                         >
-                            WAVY BOX
+                            {title ? title : "Wavy Window"}
                         </div>
                         <WavyButton funktion="minimize"></WavyButton>
                         <WavyButton funktion="maximize"></WavyButton>
