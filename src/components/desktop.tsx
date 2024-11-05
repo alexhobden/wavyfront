@@ -22,96 +22,9 @@ const Desktop: React.FC = () => {
         <div className="App">
             <WavyTaskBar></WavyTaskBar>
             <Item addWindow={addWindow} icon="foldernormal" text="clickme">
-                <Kasten>
-                    <WavyDirectory>
-                        <Item
-                            addWindow={addWindow}
-                            icon="console"
-                            text="hello.exe"
-                        >
-                            <WavyConsole></WavyConsole>
-                        </Item>
-                        <Item
-                            addWindow={addWindow}
-                            icon="videofile"
-                            text="car.mp4"
-                        >
-                            <Kasten>
-                                <video
-                                    width="320"
-                                    height="480"
-                                    autoPlay
-                                    muted
-                                    loop
-                                >
-                                    <source
-                                        src="/videos/wavy.mp4"
-                                        type="video/mp4"
-                                    />
-                                </video>
-                            </Kasten>
-                        </Item>
-
-                        <Item
-                            addWindow={addWindow}
-                            icon="videofile"
-                            text="frog.mp4"
-                        >
-                            <Kasten>
-                                <img
-                                    style={{ width: "500px", height: "500px" }}
-                                    src="./videos/frog_only.gif"
-                                    alt=""
-                                />
-                            </Kasten>
-                        </Item>
-                        <Item
-                            addWindow={addWindow}
-                            icon="videofile"
-                            text="idle.mp4"
-                        >
-                            <Kasten>
-                                <img
-                                    style={{ width: "300px", height: "500px" }}
-                                    src="./videos/skeleton_idle.gif"
-                                    alt=""
-                                />
-                            </Kasten>
-                        </Item>
-                        <Item
-                            addWindow={addWindow}
-                            icon="videofile"
-                            text="walking.mp4"
-                        >
-                            <Kasten>
-                                <img
-                                    style={{ width: "350px", height: "500px" }}
-                                    src="./videos/skeleton_walking.gif"
-                                    alt=""
-                                />
-                            </Kasten>
-                        </Item>
-
-                        <Item
-                            addWindow={addWindow}
-                            icon="network"
-                            text="skeleton.fbx"
-                        >
-                            <Kasten>
-                                <ModelViewer />
-                            </Kasten>
-                        </Item>
-                    </WavyDirectory>
+                <Kasten title="Explorer">
+                    <WavyDirectory addWindow={addWindow}></WavyDirectory>
                 </Kasten>
-            </Item>
-            <Item addWindow={addWindow} icon="video" text="powerplant.wavy">
-                <WindowFrame>
-                    <VideoPlayer size={600}></VideoPlayer>
-                </WindowFrame>
-            </Item>
-
-            <Item addWindow={addWindow} icon="video" text="mixer.wavy">
-                <Mixer></Mixer>
             </Item>
 
             <Welcome></Welcome>

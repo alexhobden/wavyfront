@@ -1,10 +1,23 @@
+import { useState } from "react"
 import ExplorEntry from "../elements/explorEntry"
+import Home from "./pages/home"
+import Creative from "./pages/creative"
+import TVRoom from "./pages/tvroom"
 
 interface WavyDirectoryProps {
     children?: React.ReactNode
+    addWindow: (newWindow: React.ReactNode) => void
 }
 
-const WavyDirectory: React.FC<WavyDirectoryProps> = ({ children }) => {
+const WavyDirectory: React.FC<WavyDirectoryProps> = ({
+    children,
+    addWindow,
+}) => {
+    const [explorerTab, setExplorerTab] = useState<React.ReactNode>()
+
+    const switchTab = (newTab: React.ReactNode) => {
+        setExplorerTab(newTab)
+    }
     return (
         <>
             <div
@@ -20,15 +33,19 @@ const WavyDirectory: React.FC<WavyDirectoryProps> = ({ children }) => {
             </div>
             <div className="flex">
                 <div className="w-[200px] p-[20px] bg-white wavy-hollow">
-                    <ExplorEntry>Home</ExplorEntry>
-                    <ExplorEntry>Blender</ExplorEntry>
-                    <ExplorEntry>TV Room</ExplorEntry>
-                    <ExplorEntry>Art</ExplorEntry>
-                    <ExplorEntry>Animation</ExplorEntry>
+                    <ExplorEntry name="Home" switchTab={switchTab}>
+                        <Home></Home>
+                    </ExplorEntry>
+                    <ExplorEntry name="Creative" switchTab={switchTab}>
+                        <Creative addWindow={addWindow}></Creative>
+                    </ExplorEntry>
+                    <ExplorEntry name="TV Room" switchTab={switchTab}>
+                        <TVRoom addWindow={addWindow}></TVRoom>
+                    </ExplorEntry>
                     {/* <VideoPlayer size={228}></VideoPlayer> */}
                 </div>
                 <div className="wavy-hollow flex pl-[8px] pr-[12px] pb-[12px] pt-[16px] bg-white w-[480px] h-96">
-                    {children}
+                    {explorerTab}
                 </div>
             </div>
         </>
