@@ -102,6 +102,14 @@ const WindowFrame: React.FC<WindowProps> = ({ children, title }) => {
                     onClick={handleZ}
                 >
                     <div className="shadow-header px-[8px] pb-[6px] pt-[6px] flex items-center h-[36px] bg-header mb-[2px]">
+                        <div className="h-full w-auto p-1 mr-3">
+                            <img
+                                className="h-full object-contain"
+                                src="images/wavyIcon.png"
+                                alt=""
+                            />
+                        </div>
+
                         <div
                             className="flex-grow-4 font-wavy text-white text-stroke"
                             onMouseDown={handleMouseDown}
